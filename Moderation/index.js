@@ -9,8 +9,8 @@ app.use(bodyParser.json());
 app.post("/events", async (req, res) => {
   const { type, data } = req.body;
   if (type === "CommentCreated") {
-    const { id, content, postId } = data;
-    const status = data.content.includes("orange") ? "rejected" : "approved";
+    const { id, comment, postId } = data;
+    const status = comment.includes("orange") ? "rejected" : "approved";
     try {
       await axios.post("http://localhost:4005/events", {
         type: "CommentModerated",
@@ -18,7 +18,7 @@ app.post("/events", async (req, res) => {
           id,
           postId,
           status,
-          content,
+          comment,
         },
       });
     } catch (err) {
@@ -30,5 +30,5 @@ app.post("/events", async (req, res) => {
 });
 
 app.listen(4003, () => {
-  console.log("Moderatio Listening on 4003");
+  console.log("Moderation Listening on 4003");
 });
