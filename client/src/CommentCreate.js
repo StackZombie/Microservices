@@ -6,7 +6,7 @@ const CommentCreate = ({ postId }) => {
   const [comment, setComment] = useState("");
   const createComment = async (event) => {
     event.preventDefault();
-
+    console.log("Comment", comment);
     try {
       await axios.post(`http://localhost:4001/posts/${postId}/comments`, {
         comment,
