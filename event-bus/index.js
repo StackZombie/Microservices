@@ -5,15 +5,24 @@ const axios = require("axios");
 app.use(bodyParser.json());
 
 app.post("/events", (req, res) => {
-  const events = req.body;
-  axios.post("http://post-clusterip-srv/events", events);
-  // axios.post("http://localhost:4001/events", events);
-  // axios.post("http://localhost:4002/events", events);
-  // axios.post("http://localhost:4003/events", events);
+  const event = req.body;
+  axios.post("http://posts-clusterip-srv:4000/events", event).catch((err) => {
+    console.log(err.message);
+  });
+  axios.post("http://comments-srv:4001/events", event).catch((err) => {
+    console.log(err.message);
+  });
+  axios.post("http://query-srv:4002/events", event).catch((err) => {
+    console.log(err.message);
+  });
+  axios.post("http://moderation-srv:4003/events", event).catch((err) => {
+    console.log(err.message);
+  });
 
   res.send({ status: "OK" });
 });
 
 app.listen(4005, () => {
+  console.log("v21");
   console.log("Event bus is running on port 4005");
 });
