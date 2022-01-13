@@ -5,7 +5,7 @@ import PostList from "./PostList";
 const App = () => {
   return (
     <div style={{ width: "50%", margin: "0 auto !important" }}>
-      <h1>Blog App</h1>
+      <h1>Blog App Charlie 2.0</h1>
       <PostCreate />
       <hr />
       <PostList />
