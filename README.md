@@ -22,8 +22,6 @@ Skaffoled faciliates in immediate updatation to the kubernetes cluster as the so
 ### Run using skaffold (this will auto generate docker images)
   skaffold run dev
  
-![example workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
-
 ### Code Version: 
  v.0.0.1
 
