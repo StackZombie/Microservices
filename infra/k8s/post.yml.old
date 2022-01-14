@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: post
-spec:
-  containers:
-    - name: post
-      image: khurram/post
-      imagePullPolicy: Never
