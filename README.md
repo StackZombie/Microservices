@@ -22,6 +22,8 @@ Skaffoled faciliates in immediate updatation to the kubernetes cluster as the so
 ### Run using skaffold (this will auto generate docker images)
   skaffold run dev
  
+### Mono-Repo ( contains all services in one repository)
+ 
 ### Code Version: 
  v.0.0.1
 
